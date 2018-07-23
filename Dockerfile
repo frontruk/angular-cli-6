@@ -36,7 +36,7 @@ RUN npm run build:universal-prod
 #RUN npm install --only=production
 
 # Expose port for the container
-EXPOSE 8000
+EXPOSE 6226
 
 # specify working directory
 WORKDIR /app

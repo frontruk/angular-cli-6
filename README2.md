@@ -155,7 +155,7 @@ $ npm run serve
 $ npm run serve:watch
 ```
 
-Navigate to `http://localhost:1337` for **lean Angular** (*client-side rendering*) and `http://localhost:8000` for **Angular
+Navigate to `http://localhost:1337` for **lean Angular** (*client-side rendering*) and `http://localhost:6226` for **Angular
 Universal** (*server-side rendering*) in your browser.
 
 ### <a name="cli-scaffolding"> CLI Scaffolding

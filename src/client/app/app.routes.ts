@@ -8,36 +8,18 @@ import { MetaGuard } from '@ngx-meta/core';
 import { ChangeLanguageComponent } from '~/app/framework/i18n/i18n.module';
 
 // components
-import { LoginComponent } from './login/login.component';
-import { MainComponent } from './layout/main.component';
+import { LayoutPublicComponent } from './layout-public/layout-public.component';
+import { LayoutAuthComponent } from './layout-auth/layout-auth.component';
 
 export const routes: Routes = [
   {
-    path: 'login',
-    component: LoginComponent,
-    canActivate: [MetaGuard],
-    data: {
-      meta: {
-        title: 'PUBLIC.LOGIN.PAGE_TITLE'
-      }
-    }
-  },
-  {
     path: '',
-    component: MainComponent,
+    component: LayoutPublicComponent,
     children: [
       {
         path: '',
         loadChildren: './+home/home.module#HomeModule'
       },
-      {
-        path: 'about',
-        loadChildren: './+about/about.module#AboutModule'
-      },
-      {
-        path: 'secure-page',
-        loadChildren: './+secure/secure.module#SecureModule'
-      }
     ],
     canActivateChild: [MetaGuard],
     data: {
@@ -45,6 +27,22 @@ export const routes: Routes = [
         isRoot: true
       }
     }
+  },
+  {
+      path: 'edit',
+      component: LayoutAuthComponent,
+      children: [
+          {
+              path: '',
+              loadChildren: './+home/home.module#HomeModule'
+          },
+      ],
+      canActivateChild: [MetaGuard],
+      data: {
+          i18n: {
+              isRoot: true
+          }
+      }
   },
   {
     path: 'change-language/:languageCode',

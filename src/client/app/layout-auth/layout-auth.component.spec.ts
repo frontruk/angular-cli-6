@@ -13,7 +13,7 @@ import { CoreTestingModule } from '~/app/framework/core/testing/core-testing.mod
 import { I18NTestingModule } from '~/app/framework/i18n/testing/i18n-testing.module';
 
 // routes & components
-import { MainComponent } from './main.component';
+import { LayoutAuthComponent } from './layout-auth.component';
 
 const testModuleConfig = () => {
   TestBed.configureTestingModule({
@@ -24,7 +24,7 @@ const testModuleConfig = () => {
       CoreTestingModule,
       I18NTestingModule
     ],
-    declarations: [MainComponent],
+    declarations: [LayoutAuthComponent],
     schemas: [CUSTOM_ELEMENTS_SCHEMA]
   });
 };
@@ -36,7 +36,7 @@ t.describe('ng-seed/universal', () => {
     t.it('should build without a problem', t.async(() => {
       TestBed.compileComponents()
         .then(() => {
-          const fixture = TestBed.createComponent(MainComponent);
+          const fixture = TestBed.createComponent(LayoutAuthComponent);
           const instance = fixture.debugElement.componentInstance;
           fixture.detectChanges();
           t.e(instance)
@@ -47,7 +47,7 @@ t.describe('ng-seed/universal', () => {
     t.it('should invoke `onActivate`', t.async(() => {
       TestBed.compileComponents()
         .then(() => {
-          const fixture = TestBed.createComponent(MainComponent);
+          const fixture = TestBed.createComponent(LayoutAuthComponent);
           const instance = fixture.debugElement.componentInstance;
           fixture.detectChanges();
           t.e(instance)

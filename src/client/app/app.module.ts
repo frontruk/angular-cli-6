@@ -24,8 +24,9 @@ import { ChangeLanguageComponent, I18NModule, translateFactory } from '~/app/fra
 import { AnalyticsModule } from '~/app/framework/analytics/analytics.module';
 
 // module
-import { HeaderComponent } from '~/app/layout/header.component';
-import { MainComponent } from '~/app/layout/main.component';
+import { HeaderComponent } from '~/app/layout-auth/header.component';
+import { LayoutPublicComponent } from '~/app/layout-public/layout-public.component';
+import { LayoutAuthComponent } from '~/app/layout-auth/layout-auth.component';
 import { LoginComponent } from '~/app/login/login.component';
 import { AppComponent } from './app.component';
 import { routes } from './app.routes';
@@ -88,7 +89,8 @@ const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {suppr
   ],
   declarations: [
     HeaderComponent,
-    MainComponent,
+    LayoutPublicComponent,
+    LayoutAuthComponent,
     LoginComponent,
     AppComponent
   ],
